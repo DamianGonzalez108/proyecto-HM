@@ -9,6 +9,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Mitr:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./hambur.css">
 </head>
 
@@ -17,115 +28,79 @@
   <header>
     <nav class="navar">
       <ul class="lista-nav">
-        <li class="ancore-nav">
-          <a href="">INICIO</a>
+        <li class="ancore-inicio">
+          <a href="" class="ancore-txt">INICIO</a>
         </li>
-        <li class="ancore-nav">
-          <a href="">COMBOS
-          </a>
-        </li>
-        <li class="ancore-nav">
-          <a href="">ESPECIALIDAD</a>
-        </li>
-        <li class="ancore-nav">
-          <a href="">NOVEDADES</a>
-        </li>
-        <li class="ancore-nav">
-          <button><img src="" class="btn-carrito" alt=""></button>
-          <div>
-            <h2>Tu Carrito</h2>
+        <li class="button-navar">
+          <button id="show-carrito" class="button-show-carrito"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+          </button>
+          <div id="compras-carrito" class="nav-carrito">
             <div class="list-carrito">
-        </div>
-        <div>Total: <span id="total">$0</span></div>
-        </div>
-
+              <p class="carrito-txt">No hay productos en el carrito.</p>
+            </div>
+            <div class="div-total-final">
+            
+            </div>
+          </div>
         </li>
+
       </ul>
     </nav>
+
   </header>
+
   <main id="main-index">
-    <div class="div-img animate__animated animate__fadeInLeft">
-      <img src="./images/ultimabrg (2).jpg" class="img-main" alt="">
+    <div class="div-main">
+      <img src="./images/RKrB (1).gif" alt="">
     </div>
     <div class="div-title">
-      <h1>TITULO</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus soluta, non placeat animi
-        recusandae perferendis tempore quis nihil rem repudiandae distinctio quidem quos omnis molestiae aliquid
-        maxime maiores consequatur eos similique ullam, fuga asperiores? Fugit hic ea similique. Officia est
-        blanditiis aspernatur, recusandae natus quo asperiores perferendis suscipit, facere voluptate mollitia
-        saepe ullam earum laudantium beatae repudiandae voluptas libero. Consequuntur illum dicta
-        exercitationem, debitis ex adipisci vero minus alias sed modi, tempore tenetur voluptates recusandae
-        ullam officiis ea dolore possimus harum sunt repellat suscipit id ducimus accusantium? Reiciendis esse
-        eum, totam modi quaerat aperiam deleniti voluptates, harum possimus consectetur voluptas!</p>
-      <button class="button-comprar animate__animated animate__fadeInDown">COMPRAR</button>
+      <p class="texto-main">
+        THE BEST BURGERS
+      </p>
     </div>
   </main>
-  <!--CARRUSEL-->
-  <h2>NOVEDADES</h2>
-  <section class="carrusel">
-    <div class="atras">
-      <img id="atras" src="./images/flecha-izq.png" alt="icono-atras" loading="lazy">
-    </div>
-    <!--IMAGENES-CARRUSEL-->
-    <div class="imagenes">
-      <div id="img">
-        <img src="images/img-carrusel1.webp" alt="publicidad-promociones" class="img" loading="lazy">
-      </div>
-      <div id="texto" class="texto">
-        <h3>Para Vos</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione fugiat facilis fuga aperiam
-          consequatur cupiditate? Quia facilis suscipit quasi blanditiis.</p>
-      </div>
-    </div>
-    <div class="adelante" id="adelante">
-      <img src="./images/flecha-der.png" alt="icono-adelante" loading="lazy">
-    </div>
-  </section>
-  <div class="puntos" id="puntos"></div>
+
+
+
+  <div class="div-button-main">
+    <button id="scroll-button" class="button-main">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      </svg>
+    </button>
+  </div>
+
+
 
   <!--LISTA-MENU-->
-  <section class="section-cards">
-    <div class="div-cards">
-
+  <section class="section-menu">
+    <div class="div-menu">
+      <div id="div-filter" class="div-filter">
+        <button id="todos" class="button-category">Todos</button>
+        <button id="recientes" class="button-category">Hamburguesas</button>
+        <button id="mas-vendidas" class="button-category">Guarnicion</button>
+        <button id="mayor-precio" class="button-category">Bebidas</button>
+        <button id="menor-precio" class="button-category">menor precio</button>
+      </div>
+      <div class="div-cards">
+      </div>
     </div>
   </section>
 
+
+
   <!--FOOTER-->
-  <footer>
-    <div class="div-footer">
-      <h3>PREGUNTAS FRECUENTES</h3>
-      <div class="p-frecuentes">
-        <ul class="primer-lista">
-          <li><a href="">Preguntas frecuentes</a></li>
-          <li><a href="">Preguntas frecuentes</a></li>
-          <li><a href="">Preguntas frecuentes</a></li>
-        </ul>
-        <ul class="segunda-lista">
-          <li><a href="">Preguntas frecuentes</a></li>
-          <li><a href="">Preguntas frecuentes</a></li>
-          <li><a href="">Preguntas frecuentes</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="contactos">
-      <h3>CONTACTANOS</h3>
-      <ul class="lista-contactos">
-        <li>TELEFONO: 2355-886655</li>
-        <li>E-MAIL: damiangonzalez108@hotmail.com</li>
-      </ul>
-    </div>
-    <div class="redes-sociales">
-      <ul class="lista-redes">
-        <li><a href=""><img src="./images/facebook.webp" alt="icono-facebook"></a></li>
-        <li><a href=""><img src="./images/instagram.webp" alt="icono-instagram"></a></li>
-        <li><a href=""><img src="./images/twitter.webp" alt="icono-twitter"></a></li>
-      </ul>
-    </div>
-  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="./hambur.js"></script>
 </body>
 

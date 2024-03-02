@@ -1,148 +1,180 @@
-let imagenes = [
-  {
-    url: "images/img-carrusel1.webp",
-    nombre: "hm1",
-    descripcion: "Esta semana tenemos estas ofertas y promciones solo para vos",
-  },
-  {
-    url: "images/img-carrusel2.webp",
-    nombre: "hm2",
-    descripcion: "Esta semana tenemos estas ofertas y promciones solo para vos",
-  },
-  {
-    url: "images/img-carrusel3.webp",
-    nombre: "hm3",
-    descripcion: "Esta semana tenemos estas ofertas y promciones solo para vos",
-  },
-];
-
-const imagen = document.querySelector("#img");
-const puntos = document.querySelector(".puntos");
-const texto = document.querySelector(".texto");
-const atras = document.querySelector(".atras");
-const adelante = document.querySelector(".adelante");
-let actual = 0;
-posicionCarrusel();
-
-atras.addEventListener("click", function () {
-  actual -= 1;
-  if (actual == -1) {
-    actual = imagenes.length - 1;
-  }
-  imagen.innerHTML = `  <img src=${imagenes[actual].url} alt="publicidad-promociones" class="img" loading="lazy">`;
-  texto.innerHTML = `  <h3>${imagenes[actual].nombre}</h3>
-<p>${imagenes[actual].descripcion}</p>`;
-  posicionCarrusel();
-  console.log([actual]);
-});
-
-adelante.addEventListener("click", function () {
-  actual += 1;
-  if (actual == imagenes.length) {
-    actual = 0;
-  }
-  imagen.innerHTML = ` <img src="${imagenes[actual].url}" alt="publicidad-promociones" class="img" loading="lazy">`;
-  texto.innerHTML = `  <h3>${imagenes[actual].nombre}</h3>
-  <p>${imagenes[actual].descripcion}</p>`;
-  posicionCarrusel();
-});
-
-function posicionCarrusel() {
-  puntos.innerHTML = "";
-  for (var i = 0; i < imagenes.length; i++) {
-    if (i == actual) {
-      puntos.innerHTML += `<p class="bold">.<p>`;
-    } else {
-      puntos.innerHTML += `<p>.<p>`;
-    }
-  }
-}
-
-/** PRODUCTOS */
+/* PRODUCTOS */
 const losProductos = [
   {
     id: "1",
-    url: "",
+    url: "/images/american.burger.jpg",
     nombre: "Americana",
-    descripcion: "90gr de carne, lechuga, tomates, cebolla cruda, danbo, bacon",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
     precio: "2500",
+    categoria: "mas-vendidas",
   },
   {
     id: "2",
-    url: "",
+    url: "/images/la.blue.jpg",
     nombre: "Queso Azul",
-    descripcion: "90gr de carne, queso azul, nueces, cebolla salteada, bacon",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
     precio: "2800",
+    categoria: "mas-vendidas",
   },
   {
     id: "3",
-    url: "",
+    url: "/images/burger.bros.jpg",
     nombre: "HM burger",
-    descripcion:
-      "120gr de carne, morrones asados, cebolla asada, cheddar, provoleta, bacon, salsa HM (ajo,mayonesa de olivas,ketchup)",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
     precio: "3200",
+    categoria: "mayor-precio",
   },
   {
     id: "4",
-    url: "",
+    url: "/images/full.began.jpg",
     nombre: "Veggie",
-    descripcion:
-      "90 gr de medallon (lentejas), cheddar veggie, cebolla salteada,morrones, provoleta",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
     precio: "2500",
+    categoria: "recientes",
   },
   {
     id: "5",
-    url: "",
+    url: "/images/papas.jpg",
     nombre: "Papas HM",
-    descripcion:
-      "guarnicion de papas, queso cheddar, verdeo, bacon, salsa HM (ajo,mayonesa de olivas,ketchup)",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
     precio: "1700",
+    categoria: "menor-precio",
+  },
+  {
+    id: "6",
+    url: "/images/papas.jpg",
+    nombre: "Papas HM",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
+    precio: "1700",
+    categoria: "menor-precio",
+  },
+  {
+    id: "7",
+    url: "/images/papas.jpg",
+    nombre: "Papas HM",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
+    precio: "1700",
+    categoria: "menor-precio",
+  },
+  {
+    id: "8",
+    url: "/images/papas.jpg",
+    nombre: "Papas HM",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
+    precio: "1700",
+    categoria: "menor-precio",
+  },
+  {
+    id: "9",
+    url: "/images/papas.jpg",
+    nombre: "Papas HM",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
+    precio: "1700",
+    categoria: "menor-precio",
+  },  {
+    id: "10",
+    url: "/images/papas.jpg",
+    nombre: "Papas HM",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
+    precio: "1700",
+    categoria: "menor-precio",
+  },  {
+    id: "11",
+    url: "/images/papas.jpg",
+    nombre: "Papas HM",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
+    precio: "1700",
+    categoria: "menor-precio",
+  },  {
+    id: "12",
+    url: "/images/papas.jpg",
+    nombre: "Papas HM",
+    descripcion: "hamburguesa doble,doble cheddar,panceta,tibo",
+    precio: "1700",
+    categoria: "menor-precio",
   },
 ];
 const productos = document.querySelector(".div-cards");
 
 /*CARRITO*/
-const carritoList = document.querySelector(".list-carrito")
-const carrito = []
-const total = document.querySelector("#total")
+const carritoList = document.querySelector(".list-carrito");
+const carrito = [];
+const total = document.querySelector(".div-total-final");
+const carritoHidde = document.querySelector(".button-show-carrito");
+const comprasHidde = document.querySelector("#compras-carrito");
 
-/*PRODUCTOS-CARDS*/ 
-function cards() {
+
+/*PRODUCTOS-CARDS*/
+function cards(productosFiltrados) {
   productos.innerHTML = "";
-
-  losProductos.forEach((producto) => {
-    productos.innerHTML += `      
+  productosFiltrados.forEach((producto) => {
+    productos.innerHTML += `
   <div class="cartas">
-      <div>
-        <img src="${producto.url}" alt="...">
+      <div class="div-images">
+        <img src="${producto.url}" alt="imagenes-del-menu" class="imgs-cards">
       </div>
-          <div>
-            <h5 class="card-title">${producto.nombre}</h5>
-            <p class="card-text">${producto.descripcion}</p>
-            <p class="card-text">$${producto.precio}</p>
+          <div class="div-txt">
+          <div class="div-tittle-precio">
+            <h5 class="card-title titulo-cartas">${producto.nombre}</h5>
+            <p class="card-text cartas-precio">$${producto.precio}</p>
+          </div>  
+            <p class="card-text descripcion-txt">${producto.descripcion}</p>
+          <div class="div-btn-agregar">
             <button id="${producto.id}" class="btnAgregar">Agregar</button>
+          </div>            
           </div>
-  </div>`;
+          
+  </div>
+  `;
   });
 }
 
-function buscarProducto(id,array){
- const producto = array.find((producto) => producto.id == id)
- return producto
+function buscarProducto(id, array) {
+  const producto = array.find((producto) => producto.id == id);
+  return producto;
 }
 
-/*EVENTOS-BUTTON */
-document.addEventListener("click",(e) => {
-const btnAgregar = document.querySelectorAll(".btnAgregar")
-const btnEliminar = document.querySelectorAll(".btnEliminar")
+/* FILTRADO DE OBJETOS */
 
-  btnAgregar.forEach((btn) =>{
-    if(e.target == btn){
-      const id = parseInt(e.target.id)
+const buttonCategory = document.querySelectorAll(".button-category");
+
+buttonCategory.forEach((boton) => {
+  boton.addEventListener("click", (e) => {
+    buttonCategory.forEach((boton) => boton.classList.remove("active"));
+    e.currentTarget.classList.add("active");
+    if (e.currentTarget.id != "todos") {
+      const botonProductosFiltrados = losProductos.filter(
+        (producto) => producto.categoria === e.currentTarget.id
+      );
+      cards(botonProductosFiltrados);
+    } else {
+      cards(losProductos);
+    }
+  });
+});
+
+/*EVENTOS-BUTTON */
+carritoHidde.addEventListener("click", () => {
+  const currentDisplay = comprasHidde.style.display;
+if (currentDisplay === "none") {
+    comprasHidde.style.display = "block";
+  } else {
+    comprasHidde.style.display = "none";
+  }
+});
+document.addEventListener("click", (e) => {
+
+  const btnAgregar = document.querySelectorAll(".btnAgregar");
+  const btnEliminar = document.querySelectorAll(".btnEliminar");
+  
+  btnAgregar.forEach((btn) => {
+    if (e.target == btn) {
+      const id = parseInt(e.target.id);
       const producto = losProductos.find((producto) => producto.id == id);
+      comprasHidde.style.display = "block";
       agregarAlCarrito(producto);
     }
-  })
+  });
 
   btnEliminar.forEach((btnBorrar) => {
     if (e.target == btnBorrar) {
@@ -150,29 +182,47 @@ const btnEliminar = document.querySelectorAll(".btnEliminar")
       eliminarDelCarrito(id);
       totalCarrito();
     }
+  }); 
+});
+
+/*BOTON SCROLL MAIN*/
+const scrollButton = document.querySelector("#scroll-button");
+scrollButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 700,
+    behavior: "smooth",
   });
-})
+});
 
 /*CARRITO*/
-function totalCarrito(){
-  const totalFinal = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad,0)
-  total.innerHTML= totalFinal
+function totalCarrito() {
+  total.innerHTML = ""
+  if(carrito <1){
+  }
+  else{
+     const totalFinal = carrito.reduce(
+    (acc, producto) => acc + producto.precio * producto.cantidad,
+    0
+  );
+  total.innerHTML += `<p class="total">Total:$${totalFinal}</p>` ;
+  }
+ 
 }
 
-function agregarAlCarrito(producto){
-  if(producto){
-    const productoEncontrado = buscarProducto(producto.id,carrito)
-    if(productoEncontrado){
-      productoEncontrado.cantidad++
-    }
-    else{
+function agregarAlCarrito(producto) {
+  if (producto) {
+    const productoEncontrado = buscarProducto(producto.id, carrito);
+    if (productoEncontrado) {
+      productoEncontrado.cantidad++;
+    } else {
       carrito.push({
         ...producto,
         cantidad: 1,
-      })
+      });
     }
     reenderizarCarrito();
-    totalCarrito()
+    totalCarrito();
+    localStorage.setItem("carrito", JSON.stringify(carrito));
   }
 }
 function eliminarDelCarrito(id) {
@@ -184,23 +234,62 @@ function eliminarDelCarrito(id) {
     carrito.splice(index, 1);
   }
   reenderizarCarrito();
+  totalCarrito()
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-function reenderizarCarrito(){
-  carritoList.innerHTML = ""
-  carrito.forEach((producto) =>{
+function reenderizarCarrito() {
+  if(carrito == 0){
+    carritoList.innerHTML=`<p class="carrito-txt">No hay productos en el carrito.</p>`
+  }
+  else{
+      carritoList.innerHTML = "";
+  carrito.forEach((producto) => {
     carritoList.innerHTML += ` <li class="producto-carrito">
-    <img src="${producto.url}" alt="">
-    <h3>${producto.nombre}</h3>
-    <p>${producto.precio}</p>
-    <p>cantidad=${producto.cantidad}</p> 
-    <button id="${producto.id}" class="btnEliminar">X</button>
-  </li>`
-  })
+    <img src="${producto.url}" alt="" class="img-producto">
+    <div class="div-padre-carrito">
+    <div class="div-producto-carrito">
+    <div class="nombre-cantidad-carrito">
+    <h3>${producto.cantidad}x${producto.nombre}</h3>
+    </div>
+    <div>
+    <h3>$${producto.precio}</h3>
+    </div>
+    </div>
+    
+   <div class="div-eliminar-carrito">
+   <button id="${producto.id}" class="btnEliminar">ELIMINAR</button>
+   </div>
+   </div>
+   </li>`;
+  });
+  }
 }
 
 //DOM
 
 document.addEventListener("DOMContentLoaded", () => {
-  cards()
-})
+  cards(losProductos);
+  comprasHidde.style.display = "none";
+  const carritoStorage = JSON.parse(localStorage.getItem("carrito")) || [];
+  if (carritoStorage.length > 0) {
+    carritoStorage.forEach((producto) => {
+      carrito.push(producto);
+    });
+    reenderizarCarrito();
+    totalCarrito();
+  } else {
+    Toastify({
+      text: "No hay productos en el carrito",
+      duration: 2000,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
+  }
+});
