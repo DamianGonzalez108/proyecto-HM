@@ -95,7 +95,8 @@ const losProductos = [
   },
 ];
 const productos = document.querySelector(".div-cards");
-
+const buttonCategory = document.querySelectorAll(".button-category");
+const selectProduct = document.querySelector("#productSelect")
 /*CARRITO*/
 const carritoList = document.querySelector(".list-carrito");
 const carrito = [];
@@ -136,8 +137,6 @@ function buscarProducto(id, array) {
 
 /* FILTRADO DE OBJETOS */
 
-const buttonCategory = document.querySelectorAll(".button-category");
-
 buttonCategory.forEach((boton) => {
   boton.addEventListener("click", (e) => {
     buttonCategory.forEach((boton) => boton.classList.remove("active"));
@@ -152,6 +151,21 @@ buttonCategory.forEach((boton) => {
     }
   });
 });
+
+/* ORDEN DE PRODUCTOS */
+
+function reenderizarselect (){
+const masRelevante = document.querySelector(".mas-relevante")
+}
+ 
+losProductos.sort((a,b) => {
+  if(a.precio < b.precio){
+    return -1
+  }
+
+})
+
+
 
 /*EVENTOS-BUTTON */
 carritoHidde.addEventListener("click", () => {

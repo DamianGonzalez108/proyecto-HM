@@ -80,12 +80,20 @@
   <!--LISTA-MENU-->
   <section class="section-menu">
     <div class="div-menu">
+      <div class="div-filter-select">
       <div id="div-filter" class="div-filter">
         <button id="todos" class="button-category">Todos</button>
         <button id="hamburguesas" class="button-category">Hamburguesas</button>
         <button id="guarnicion" class="button-category">Guarnicion</button>
         <button id="bebidas" class="button-category">Bebidas</button>
       </div>
+      <select id="productSelect" name="productSelect" required>
+        <option value="" disabled selected>Ordenar por</option>
+        <option class="mas-relevante" value="" >Mas relevante</option>
+        <option value="" >Mayor precio</option>
+        <option value="" >Menor precio</option>
+      </select>
+    </div>
       <div class="div-cards">
       </div>
     </div>
